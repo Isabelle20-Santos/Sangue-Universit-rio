@@ -1,0 +1,224 @@
+.page-hero {
+  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg));
+  padding: 64px 24px 20px;
+  text-align: center;
+}
+.page-hero-inner { max-width: 680px; margin: 0 auto; }
+.page-hero-inner h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 10px 0 16px; }
+.page-hero-inner p { color: var(--color-text-muted); }
+
+.services {
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.service-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.service-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 20px;
+  border: 1px solid rgba(79, 110, 247, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.service-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.gamification {
+  padding: 44px 24px 60px;
+  text-align: center;
+}
+
+.gamification .section-head {
+  margin-bottom: 28px;
+}
+
+.game-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.game-card {
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+}
+
+.game-card h3 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin-top: 10px;
+}
+
+.game-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.game-card.red { background: rgba(230, 57, 70, 0.08); }
+.game-card.red .game-label { color: var(--color-red-dark); }
+.game-card.blue { background: rgba(79, 110, 247, 0.08); }
+.game-card.blue .game-label { color: var(--color-blue-dark); }
+.game-card.navy { background: rgba(27, 35, 64, 0.08); }
+.game-card.navy .game-label { color: var(--color-navy); }
+.game-card.green { background: rgba(0, 168, 110, 0.10); }
+.game-card.green .game-label { color: #0B8F5A; }
+
+.game-cta {
+  margin-top: 24px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(79, 110, 247, 0.12);
+  color: var(--color-blue);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.back-to-top:hover {
+  background: rgba(79, 110, 247, 0.22);
+}
+
+@media (max-width: 980px) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .game-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .service-grid { grid-template-columns: 1fr; }
+  .game-grid { grid-template-columns: 1fr; }
+
+  .service-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(27, 35, 64, 0.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  z-index: 200;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+
+.modal-box {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  max-width: 520px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 40px;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform 0.25s ease;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+
+.modal-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--color-bg-soft);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted);
+}
+.modal-close:hover { background: var(--color-card); }
+
+.modal-content h2 { font-size: 1.4rem; margin-bottom: 6px; }
+.modal-content .modal-eyebrow { display: block; color: var(--color-blue); font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.modal-content p { color: var(--color-text-muted); font-size: 0.92rem; margin-bottom: 18px; }
+
+.donor-card-visual {
+  background: linear-gradient(135deg, #4F6EF7, #1B2340);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+.donor-card-visual .level { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; }
+.donor-card-visual .name { font-family: var(--font-display); font-size: 1.2rem; margin: 6px 0 18px; }
+.donor-card-visual .row { display: flex; justify-content: space-between; font-size: 0.82rem; opacity: 0.9; }
+
+.modal-table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
+.modal-table th, .modal-table td { text-align: left; padding: 10px 8px; font-size: 0.86rem; border-bottom: 1px solid var(--color-bg-soft); }
+.modal-table th { color: var(--color-text-muted); font-weight: 700; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.modal-table tr.highlight td { background: var(--color-bg-soft); font-weight: 700; }
+
+.hours-progress-track { height: 12px; border-radius: 999px; background: var(--color-bg-soft); overflow: hidden; margin: 14px 0 8px; }
+.hours-progress-fill { height: 100%; background: var(--color-blue); border-radius: 999px; transition: width 0.6s ease; }
+.hours-progress-label { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 20px; }
+
+.modal-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+
+@media (max-width: 560px) {
+  .modal-box { padding: 28px 22px; }
+}

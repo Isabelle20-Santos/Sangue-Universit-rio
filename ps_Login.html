@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar ou Participar | Sangue Universitário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/ps_UniversitBase.css">
+<link rel="stylesheet" href="css/ps_Login.css">
+</head>
+<body>
+
+<header class="login-header">
+  <a href="index.html" class="brand">
+    <img src="img/Psangue.png" alt="Sangue Universitário" class="brand-logo">
+  </a>
+  <a href="ps_Universit.html" class="back-link"><i class="bi bi-arrow-left"></i> Voltar ao site</a>
+</header>
+
+<main class="auth-wrap">
+  <div class="auth-grid">
+
+    <aside class="auth-visual">
+      <body>
+        <video src="img/Mascote_acena_e_se_move_202607171312.mp4" width="760" height="760" autoplay muted loop></video>
+      </body>
+      <div class="auth-visual-overlay">
+        <h2>Toda doação conta uma história.</h2>
+        <p>Junte-se à rede de doadores universitários e acompanhe todo o seu impacto em um só lugar.</p>
+      
+      </div>
+    </aside>
+
+    <section class="auth-panel">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Entrar</button>
+        <button class="auth-tab" data-tab="cadastro">Cadastrar</button>
+      </div>
+
+      <form class="auth-form active" id="loginForm" data-panel="login">
+        <h1>Bem-vindo de volta</h1>
+        <p class="auth-subtitle">Acesse sua área do doador para acompanhar seu histórico e benefícios.</p>
+
+        <label>E-mail
+          <input type="email" name="email" placeholder="seu.email@exemplo.com" required>
+        </label>
+
+        <label>Senha
+          <div class="password-field">
+            <input type="password" name="senha" placeholder="Sua senha" required>
+            <button type="button" class="toggle-password" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+          </div>
+        </label>
+
+        <div class="auth-row">
+          <label class="checkbox-line">
+            <input type="checkbox"> <span>Manter conectado</span>
+          </label>
+          <a href="#" class="forgot-link">Esqueci minha senha</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar <i class="bi bi-arrow-right"></i></button>
+
+        <p class="auth-switch">Ainda não tem conta? <button type="button" class="link-btn" data-switch="cadastro">Cadastre-se</button></p>
+      </form>
+
+      <form class="auth-form" id="signupForm" data-panel="cadastro">
+        <h1>Crie sua conta de doador</h1>
+        <p class="auth-subtitle">Leva menos de 2 minutos. Você poderá completar a pré-triagem depois.</p>
+
+        <label>Nome completo
+          <input type="text" name="nome" placeholder="Seu nome completo" required>
+        </label>
+
+        <div class="form-row">
+          <label>E-mail
+            <input type="email" name="email" placeholder="seu.email@exemplo.com" required>
+          </label>
+          <label>Telefone
+            <input type="tel" name="telefone" placeholder="(92) 9XXXX-XXXX" required>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Senha
+            <div class="password-field">
+              <input type="password" name="senha" placeholder="Crie uma senha" required minlength="6">
+              <button type="button" class="toggle-password" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+            </div>
+          </label>
+          <label>Confirmar senha
+            <input type="password" name="confirmar-senha" placeholder="Repita a senha" required minlength="6">
+          </label>
+        </div>
+
+        <label>Tipo sanguíneo (se souber)
+          <select name="tipo-sanguineo">
+            <option value="">Não sei</option>
+            <option>A+</option><option>A-</option>
+            <option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option>
+            <option>O+</option><option>O-</option>
+          </select>
+        </label>
+
+        <label class="checkbox-line">
+          <input type="checkbox" required>
+          <span>Concordo com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Criar Conta <i class="bi bi-arrow-right"></i></button>
+
+        <p class="auth-switch">Já tem conta? <button type="button" class="link-btn" data-switch="login">Entrar</button></p>
+      </form>
+
+      <p class="auth-feedback" id="authFeedback" hidden></p>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/ps_Login.js"></script>
+</body>
+</html>
